@@ -22,9 +22,9 @@ The output of ``gm2png --help``:
     
     Z is the zoom level.
     
-    The tiles to be downloaded form a rectangular area determined by
-    XMIN, XMAX, YMIN and YMAX. The top left tile is at (XMIN,YMIN)
-    and the bottom right tile at (XMAX, YMAX).
+    The tiles form a rectangular area determined by XMIN, XMAX, YMIN
+    and YMAX. The top left tile is at (XMIN,YMIN) and the bottom right
+    tile at (XMAX, YMAX).
     
     The downloaded tiles are stored in '~/build/gm2png/tiles'. Saved
     tiles are not downloaded again in subsequent runs of 'gm2png'.
