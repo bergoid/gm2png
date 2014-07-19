@@ -2,6 +2,7 @@ gm2png
 ======
 
 This script is based on Alexander Honda's 'googlemap2png' script (https://code.google.com/p/googlemap2png/).
+
 Requires ``rabot`` (https://github.com/bergoid/rabot).
 
 The output of ``gm2png --help``:
