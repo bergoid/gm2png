@@ -3,7 +3,11 @@ gm2png
 
 This script is based on Alexander Honda's 'googlemap2png' script (https://code.google.com/p/googlemap2png/).
 
-Requires ``rabot`` (https://github.com/bergoid/rabot).
+Requires:
+
+- ``rabot`` (https://github.com/bergoid/rabot).
+- ``wget`` (https://www.gnu.org/software/wget/).
+- ImageMagick's ``montage`` tool (http://www.imagemagick.org/script/montage.php).
 
 The output of ``gm2png --help``:
 ::
