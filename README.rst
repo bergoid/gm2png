@@ -17,8 +17,8 @@ The output of ``gm2png --help``:
     'gm2png' downloads individual tiles from Google Maps, stitches
     them together to form a mosaic and saves the result in a .png file.
     
-    TYPE is either 'sat' for satellite imagery, 'ter' for terrain or
-    'map' for street map.
+    TYPE is either 'sat' for satellite imagery, 'ter' for terrain, 'map' for
+    street map or 'hyb' for hybrid (satellite/street).
     
     Z is the zoom level.
     
