@@ -18,8 +18,8 @@ Usage: $(basename "$0") TYPE Z XMIN XMAX YMIN YMAX [FILENAME_PREFIX] [LANG]
 '$(basename "$0")' downloads individual tiles from Google Maps, stitches
 them together to form a mosaic and saves the result in a .png file.
 
-TYPE is either 'sat' for satellite imagery, 'ter' for terrain or
-'map' for street map.
+TYPE is either 'sat' for satellite imagery, 'ter' for terrain, 'map' for
+street map or 'hyb' for hybrid (satellite/street).
 
 Z is the zoom level.
 
@@ -60,6 +60,14 @@ Xmax=$4
 Ymin=$5
 Ymax=$6
 
+if [ "$(echo "$Xmin > $Xmax" | bc)" -eq "1" ]; then
+    exitWith 1 "Error : Xmin > Xmax ($Xmin > $Xmax)"
+fi
+
+if [ "$(echo "$Ymin > $Ymax" | bc)" -eq "1" ]; then
+    exitWith 1 "Error : Ymin > Ymax ($Ymin > $Ymax)"
+fi
+
 lang=$8
 if [ -z "$lang" ]; then
     langStringRemote=
@@ -85,6 +93,7 @@ case "$mapType" in
     "sat") server="http://khms0.google.com/kh/v=153$langStringRemote";;
     "ter") server="http://mts0.google.com/vt/lyrs=t@132,r@269000000$langStringRemote";;
     "map") server="http://mts0.google.com/vt/lyrs=m@269000000$langStringRemote";;
+    "hyb") server="http://mts0.google.com/vt/lyrs=y@269000000$langStringRemote";;
     *) exitWith 1 "Error: Invalid map type: \"$mapType\"";;
 esac
 
